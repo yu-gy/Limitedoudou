@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limitedoudou</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = () => {
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+            });
+
+            let moreBtn = document.querySelector('.button');
+            let moreItem = document.querySelector('.more_item');
+            let menuBtn = document.querySelector('.menu_btn');
+            let menu = document.querySelector('.nav');
+            let menuClose = document.querySelector('.close_btn');
+            let body = document.querySelector('body');
+            let depth = document.getElementById('shop');
+            let depthMenu = document.querySelector('.depth-02');
+
+            moreBtn.addEventListener('click', () => {
+                /*  moreItem.classList.add('active');
+                 moreBtn.innerHTML = 'CLOSE' */
+                if (moreBtn.innerHTML === 'MORE VIEW') {
+                    /*  moreBtn.innerHTML = 'MORE VIEW'; */
+                    moreBtn.innerHTML = 'CLOSE';
+                    moreItem.classList.add('active');
+                } else {
+                    moreItem.classList.remove('active');
+                    moreBtn.innerHTML = 'MORE VIEW';
+                }
+            });
+
+            menuBtn.addEventListener('click', () => {
+                menu.classList.add('active');
+                body.classList.add('active');
+            });
+
+            menuClose.addEventListener('click', () => {
+                menu.classList.remove('active');
+                body.classList.remove('active');
+            });
+
+            depth.addEventListener('click', () => {
+                depthMenu.classList.toggle('active');
+                depth.classList.toggle('active');
+            });
+
+        };//w
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <a href="#"><img src="img/findicon.png" alt="검색"></a>
+            <a href="#"><img src="img/logo.png" alt="로고"></a>
+            <div class="icon">
+                <a href="#"><img src="img/cart.png" alt="장바구니"></a>
+                <button class="menu_btn"><img src="img/menuicon.png" alt="메뉴"></button>
+            </div><!-- icon end -->
+            <nav class="nav">
+                <button class="close_btn"><img src="img/closeicon.png" alt="메뉴닫기"></button>
+                <div class="top_menu">
+                    <ul>
+                        <a href="#">
+                            <li>LOGIN</li>
+                        </a>
+                        <a href="#">
+                            <li>JOIN US</li>
+                        </a>
+                        <a href="#">
+                            <li>MYPAGE</li>
+                        </a>
+                        <a href="#">
+                            <li>CART</li>
+                        </a>
+                    </ul>
+                </div><!-- top_menu end -->
+                <ul class="gnb">
+                    <li>
+                        <a href="#" class="depth-01">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a href="#" id="shop" class="depth-01">SHOP</a>
+                        <ul class="depth-02">
+                            <li><a href="#">ALL</a></li>
+                            <li><a href="#">OUTER</a></li>
+                            <li><a href="#">TOP</a></li>
+                            <li><a href="#">DRESS</a></li>
+                            <li><a href="#">BOTTOM</a></li>
+                            <li><a href="#">HOMEWEAR</a></li>
+                            <li><a href="#">BABY</a></li>
+                            <li><a href="#">ACC</a></li>
+                        </ul><!--depth-02 end  -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth-01">LOOK BOOK</a>
+                    </li>
+                    <li>
+                        <a href="#" class="depth-01">EVENT</a>
+                    </li>
+                    <li>
+                        <a href="#" class="depth-01">Q&A</a>
+                    </li>
+                    <li><a href="#"><img src="img/instagram.png" alt="인스타"></a></li>
+                </ul><!-- gnb end -->
+            </nav><!-- nav end -->
+        </header><!-- header end -->
+        <main class="main">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/main3.jpg" alt="" class="메인이미지1">
+                        <div class="swiper_item">
+                            <div class="item"><img src="img/visual_item1-1.jpg" alt="메인아이템1"></div>
+                            <div class="item"><img src="img/visual_item1-2.jpg" alt="메인아이템2"></div>
+                            <div class="item"><img src="img/visual_item1-3.jpg" alt="메인아이템3"></div>
+                        </div><!--swiper_item end  -->
+                    </div><!--swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/visual2.jpg" alt="" class="메인이미지2">
+                        <div class="swiper_item">
+                            <div class="item"><img src="img/visual_item2-1.jpg" alt="메인아이템2-1"></div>
+                            <div class="item"><img src="img/visual_item2-2.jpg" alt="메인아이템2-2"></div>
+                            <div class="item"><img src="img/visual_item2-3.jpg" alt="메인아이템2-3"></div>
+                        </div><!--swiper_item end  -->
+                    </div><!--swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/visual3.jpg" alt="" class="메인이미지3">
+                        <div class="swiper_item">
+                            <div class="item"><img src="img/visual_item3-1.jpg" alt="메인아이템3-1"></div>
+                            <div class="item"><img src="img/visual_item3-2.jpg" alt="메인아이템3-2"></div>
+                            <div class="item"><img src="img/visual_item3-3.jpg" alt="메인아이템3-3"></div>
+                        </div><!--swiper_item end  -->
+                    </div><!--swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/visual4.jpg" alt="" class="메인이미지4">
+                        <div class="swiper_item">
+                            <div class="item"><img src="img/visual_item4-1.jpg" alt="메인아이템4-1"></div>
+                            <div class="item"><img src="img/visual_item4-2.jpg" alt="메인아이템4-2"></div>
+                            <div class="item"><img src="img/visual_item4-3.jpg" alt="메인아이템4-3"></div>
+                        </div><!--swiper_item end  -->
+                    </div><!--swiper-slide end -->
+
+                </div><!-- swiper-wrapper end-->
+                <div class="swiper-pagination"></div>
+            </div><!-- swiper mySwiper end -->
+            <div class="bottom_nav">
+                <img src="" alt="">
+            </div><!-- bottom_nav end -->
+        </main><!-- main end -->
+
+        <section class="new">
+            <h2>NEW ARRIVALS</h2>
+            <div class="list">
+                <div class="new_item">
+                    <div class="item">
+                        <div class="image_wrap">
+                            <img src="img/item1.jpg" alt="">
+                            <p class="sold_out">SOLD OUT</p>
+                        </div><!--  image_wrap end-->
+                        <div class="text">
+                            <h3>브라운 토끼 패딩 점퍼</h3>
+                            <p>109,000원</p>
+                            <span>87,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <img src="img/item2.jpg" alt="">
+                        <div class="text">
+                            <h3>아기양 머스타드 패딩 점퍼</h3>
+                            <p>85,000원</p>
+                            <span>59,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                    <div class="item">
+                        <img src="img/item3.jpg" alt="">
+                        <div class="text">
+                            <h3>달마시안 양면 점퍼</h3>
+                            <p>122,000원</p>
+                            <span>97,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                    <div class="item">
+                        <img src="img/item4.jpg" alt="">
+                        <div class="text">
+                            <h3>네이비 후르츠 점퍼</h3>
+                            <p>122,000원</p>
+                            <span>97,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                </div><!-- new_item end -->
+
+                <div class="more_item">
+                    <div class="item">
+                        <img src="img/moreitem.jpg" alt="">
+                        <div class="text">
+                            <h3>그린 애플 패딩 점퍼</h3>
+                            <p>85,000원</p>
+                            <span>59,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                    <div class="item">
+                        <img src="img/moreitem2.jpg" alt="">
+                        <div class="text">
+                            <h3>그린 애플 맨투맨 셋업</h3>
+                            <p>76,000원</p>
+                            <span>57,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                    <div class="item">
+                        <img src="img/moreitem3.jpg" alt="">
+                        <div class="text">
+                            <h3>핑크 피치 패딩 점퍼</h3>
+                            <p>85,000원</p>
+                            <span>59,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                    <div class="item">
+                        <img src="img/moreitem4.jpg" alt="">
+                        <div class="text">
+                            <h3>핑크 피치 맨투맨 셋업</h3>
+                            <p>76,000원</p>
+                            <span>57,000원</span>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                </div><!-- more_item end -->
+                <button class="button">MORE VIEW</button>
+            </div><!-- list end -->
+        </section><!-- new end -->
+
+        <div class="banner"><a href="#"><img src="img/banner.jpg" alt="이벤트배너"></a></div>
+
+        <section class="best">
+            <h2>BEST ITEM</h2>
+            <div class="list">
+                <div class="item">
+                    <img src="img/best1.jpg" alt="베스트아이템이미지">
+                    <div class="text">
+                        <h3>핑크베어 사과퍼 조끼</h3>
+                        <p>43,000원</p>
+                        <span>34,000원</span>
+                    </div><!-- text end -->
+                </div><!-- item end -->
+                <div class="item">
+                    <img src="img/best2.jpg" alt="베스트아이템이미지2">
+                    <div class="text">
+                        <h3>블랙베어 사과 패딩</h3>
+                        <p>99,000원</p>
+                        <span>79,000원</span>
+                    </div><!-- text end -->
+                </div><!-- item end -->
+                <div class="item">
+                    <img src="img/best3.jpg" alt="베스트아이템이미지3">
+                    <div class="text">
+                        <h3>블랙베어 핑크 니트 조끼</h3>
+                        <p>49,000원</p>
+                        <span>39,000원</span>
+                    </div><!-- text end -->
+                </div><!-- item end -->
+            </div><!-- list end -->
+        </section><!--best end  -->
+
+        <section class="insta">
+            <div class="box">
+                <a href="#"><img src="img/instagram.png" alt="인스타아이콘"></a>
+                <h2>FOLLOW US ON INSTAGRAM</h2>
+                <p>@limitedoudou_offcial</p>
+            </div><!-- box end -->
+            <div class="list">
+                <div class="item">
+                    <img src="img/insta1.jpg" alt="인스타이미지1">
+                    <img src="img/insta2.jpg" alt="인스타이미지2">
+                    <img src="img/insta3.jpg" alt="인스타이미지3">
+                    <img src="img/insta4.jpg" alt="인스타이미지4">
+                    <img src="img/insta5.jpg" alt="인스타이미지5">
+                    <img src="img/insta6.jpg" alt="인스타이미지6">
+                </div><!-- item end -->
+            </div><!-- list end -->
+        </section><!-- insat end -->
+
+        <footer class="footer">
+            <div class="copyright">
+                <strong>COPYRIGHT©DOUDOU F&L ALL RIGHTS RESERVED</strong>
+                <p>“리미떼두두(Limitedoudou)”의 모든 일러스트 및 홈페이지에 사용된<br /> 모든 도안, 콘텐츠는 저작권법 제4조에 의한 저작물이며,<br />㈜두두에프앤엘은 저작권법
+                    제10조에 의한 독점 배타권을 보유하고 있는 저작자입니다.<br />이에 무단 도용 또는 유사 변형하여 사용한 제품을 제조 또는 판매 등을 하는 행위는<br />그 즉시 민,
+                    형사상의 법적 책임을 물 수 있습니다.</p>
+            </div><!--copyright end  -->
+
+            <div class="footer_list">
+                <div class="cs">
+                    <h4>CS Center</h4>
+                    <strong>070-8800-3903</strong>
+                    <p>Q&A게시판</p>
+                    <span>평일 14:00 - 17:00<br />토/일 · 공휴일 휴무</span>
+                </div><!-- cs end -->
+                <div class="bank">
+                    <h4>Bank Account</h4>
+                    <p>KB 464801-01-198237<br />SHINHAN 100-035-150140<br />주식회사 두두에프앤엘</p>
+                </div><!--  bank end -->
+            </div><!--footer_list emd  -->
+
+            <div class="bottom">
+                <ul>
+                    <li>
+                        <p>COMPANY.</p>
+                        <span>주식회사 두두에프앤엘</span>
+                    </li>
+                    <li>
+                        <p>CEO.</p>
+                        <span>이미섭,조재현</span>
+                    </li>
+                    <li>
+                        <p>ADDRESS.</p>
+                        <span>서울특별시 강남구 언주로170길 8 (신사동) 스페이스데코 5층</span>
+                    </li>
+                    <li>
+                        <p>BUSINESS LICENSE.</p>
+                        <span>217-81-50524</span>
+                    </li>
+                    <li>
+                        <p>MAIL-ORDER LICENSE.</p>
+                        <span>2020-서울강남-03645</span>
+                    </li>
+                    <li>
+                        <p>TEL.</p>
+                        <span>070-8800-3903</span>
+                    </li>
+                    <li>
+                        <p>WEBMASTER.</p>
+                        <span>LEE MI SEOP</span>
+                    </li>
+                    <li>
+                        <p>HOSTING BY</p>
+                        <span>심플렉스인터넷(주)</span>
+                    </li>
+                </ul>
+            </div><!-- bottom end -->
+        </footer><!-- footer end -->
+    </div><!-- #warp end -->
+</body>
+
+</html>
