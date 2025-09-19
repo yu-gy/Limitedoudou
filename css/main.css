@@ -7,7 +7,7 @@ body.active {
 
 #wrap {
     max-width: 1024px;
-    width: calc(100% - 30px);
+    width: calc(100% - 20px);
     margin: 0 auto;
 }
 
@@ -15,7 +15,7 @@ body.active {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 5px;
     height: 60px;
     align-items: center;
     position: sticky;
@@ -230,7 +230,7 @@ body.active {
     line-height: 30px;
     color: #fff;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -300,11 +300,13 @@ body.active {
     font-weight: 600;
     font-size: 15px;
 }
+
 .insta .box {
     text-align: center;
     width: 100%;
     margin: 0 auto;
 }
+
 .insta .box h2 {
     font-size: 22px;
     font-weight: bold;
@@ -312,6 +314,7 @@ body.active {
     text-align: center;
     line-height: 1.5;
 }
+
 .insta .box p {
     font-size: 17px;
     padding-bottom: 30px;
@@ -321,14 +324,16 @@ body.active {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 8px;
-    width:100%;
+    row-gap: 8px;
+    width: 100%;
     margin-bottom: 70px;
 }
-.insta  .list .item img {
+
+.insta .list .item img {
     width: 32.03%;
     object-fit: cover;
 }
+
 .footer .copyright {
     border-top: 1px solid #BDBCBC;
     border-bottom: 1px solid #bdbcbc;
@@ -467,11 +472,44 @@ body.active {
     }
 
     .new .list .item img {
+        display: block;
         width: 100%;
     }
 
-    .best .list .item:nth-child(3) .text h3 {
-        white-space: nowrap;
+    .new .list .item .text h3 {
+        word-break: keep-all;
+    }
+
+    .best .list .item .text h3 {
+        white-space: wrap;
+        word-break: keep-all;
         letter-spacing: -0.8px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .header .nav .top_menu li {
+        font-size: 13px;
+    }
+
+    .footer .copyright p {
+        font-size: 11px;
+    }
+
+    @media screen and (max-width: 420px) {
+        .header .nav {
+            padding: 30px 20px 60px 20px;
+        }
+
+        .footer .copyright p {
+            font-size: 10px;
+            letter-spacing: -0.3px;
+            white-space: wrap;
+            word-break: keep-all;
+        }
+        .new .list .button {
+            width: 130px;
+            font-size: 14px;
+        }
     }
 }
