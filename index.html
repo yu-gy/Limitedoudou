@@ -29,6 +29,8 @@
             let body = document.querySelector('body');
             let depth = document.getElementById('shop');
             let depthMenu = document.querySelector('.depth-02');
+            let searchBox = document.querySelector('.search_box input');
+            let searchBtn = document.querySelector('.header .search_btn')
 
             moreBtn.addEventListener('click', () => {
                 /*  moreItem.classList.add('active');
@@ -58,7 +60,12 @@
                 depth.classList.toggle('active');
             });
 
-        };//w
+            searchBtn.addEventListener('click', () => {
+                searchBox.classList.toggle('active');
+                body.classList.toggle('active');
+            });
+
+        };//s
 
     </script>
 </head>
@@ -66,7 +73,7 @@
 <body>
     <div id="wrap">
         <header class="header">
-            <a href="#"><img src="img/findicon.png" alt="검색"></a>
+            <div class="search_btn"><a href="#"><img src="img/searchicon.png" alt="검색"></a></div>
             <h1><a href="#"><img src="img/logo.png" alt="리미떼두두"></a></h1>
             <div class="icon">
                 <a href="#"><img src="img/cart.png" alt="장바구니"></a>
@@ -120,6 +127,11 @@
                 </ul><!-- gnb end -->
             </nav><!-- nav end -->
         </header><!-- header end -->
+
+        <div class="search_box">
+            <input type="text" >            
+        </div><!--search_box end  -->
+
         <main class="main">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
