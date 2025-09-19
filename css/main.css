@@ -1,10 +1,36 @@
 @charset "utf-8";
 @import url('reset.css');
+@font-face {
+    font-family: 'Noto-Sans-KR';
+    src: url('../font/NotoSansKR-Bold.woff2') format('woff2'),
+        url('../font/NotoSansKR-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto-Sans-b';
+    src: url('../font/NotoSans-Bold.woff2') format('woff2'),
+        url('../font/NotoSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto-Sans-m';
+    src: url('../font/NotoSans-Medium.woff2') format('woff2'),
+        url('../font/NotoSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 
 body.active {
     overflow: hidden;
 }
-
+body {
+    font-family: 'Noto-Sans-m';
+}
 #wrap {
     max-width: 1024px;
     width: calc(100% - 20px);
@@ -44,8 +70,11 @@ body.active {
     top: 0;
     padding: 30px 50px 60px 60px;
     transition: right 0.7s linear;
+    overflow-y: auto;
 }
-
+.header .nav::-webkit-scrollbar {
+        display: none;
+    }
 .header .nav.active {
     display: block;
     right: 0;
@@ -64,7 +93,7 @@ body.active {
 }
 
 .header .nav .top_menu li {
-    font-weight: bold;
+    font-family: 'Noto-Sans-KR';
     letter-spacing: 1px;
 }
 
@@ -76,12 +105,8 @@ body.active {
 
 .header .nav .gnb a.depth-01 {
     font-size: 20px;
-    font-weight: bold;
+    font-family: 'Noto-Sans-KR';
     letter-spacing: 2px;
-}
-
-.header .nav .gnb a.depth-01:hover {
-    color: #D98E80;
 }
 
 .header .nav .gnb a.depth-01.active {
@@ -105,7 +130,18 @@ body.active {
     letter-spacing: 3px;
     font-weight: bold;
 }
-
+.main .top_button {
+    position: fixed;
+    bottom: 28px;
+    right: 20px;
+    z-index: 9;
+    cursor: pointer;
+}
+.main .top_button p {
+    font-size: 14px;
+    font-family: 'Noto-Sans-KR';
+    color: #74A7AF;
+}
 .swiper.mySwiper .swiper-wrapper .swiper-slide {
     display: flex;
     gap: 10px;
@@ -157,7 +193,7 @@ body.active {
 
 .new h2 {
     font-size: 22px;
-    font-weight: bold;
+    font-family: 'Noto-Sans-KR';
     letter-spacing: 5px;
     text-align: center;
     padding: 40px 0;
@@ -176,6 +212,7 @@ body.active {
     font-weight: 500;
     display: block;
     cursor: pointer;
+    font-family: 'Noto-Sans-KR';
 }
 
 .new .list .new_item {
@@ -191,7 +228,7 @@ body.active {
 }
 
 .new .list .item .text h3 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
 }
 
@@ -257,7 +294,7 @@ body.active {
 
 .best h2 {
     font-size: 22px;
-    font-weight: bold;
+    font-family: 'Noto-Sans-KR';
     letter-spacing: 5px;
     text-align: center;
     padding: 40px 0;
@@ -309,10 +346,10 @@ body.active {
 
 .insta .box h2 {
     font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 3px;
+    font-family: 'Noto-Sans-KR';
+    letter-spacing: 2px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 .insta .box p {
@@ -329,9 +366,15 @@ body.active {
     margin-bottom: 70px;
 }
 
-.insta .list .item img {
+.insta .list .item a {
     width: 32.03%;
+    /* object-fit: cover; */
+    display: block;
+}
+.insta .list .item a img {
+    width: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .footer .copyright {
@@ -342,6 +385,7 @@ body.active {
 }
 
 .footer .copyright strong {
+    font-family: 'Noto-Sans-KR';
     font-size: 14px;
     display: inline-block;
     margin-bottom: 20px;
@@ -423,21 +467,12 @@ body.active {
 }
 
 .footer .bottom ul li p {
-    font-weight: bold;
+    font-family: 'Noto-Sans-KR';
 }
 
 @media screen and (max-width: 900px) {
     .header .nav {
-        width: 100%;
-        overflow-y: auto;
-    }
-
-    .header .icon {
-        gap: 15px;
-    }
-
-    .header .nav::-webkit-scrollbar {
-        display: none;
+        width: 100%;   
     }
 
     .swiper.mySwiper .swiper-wrapper .swiper-slide {
@@ -466,7 +501,9 @@ body.active {
         object-fit: cover;
         position: static;
     }
-
+    .new h2 {
+            padding: 0 0 30px 0;
+        }
     .new .list .item {
         width: 49.05%;
     }
@@ -491,18 +528,25 @@ body.active {
     .header .nav .top_menu li {
         font-size: 13px;
     }
-
+    .header .icon {
+        gap: 15px;
+    }
     .footer .copyright p {
         font-size: 11px;
     }
 
     @media screen and (max-width: 420px) {
         .header .nav {
-            padding: 30px 20px 60px 20px;
+            padding: 30px 20px 60px 30px;
         }
+    
 
+        .best h2 {
+            padding: 30px 0;
+        }
+        
         .footer .copyright p {
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: -0.3px;
             white-space: wrap;
             word-break: keep-all;
@@ -510,6 +554,7 @@ body.active {
         .new .list .button {
             width: 130px;
             font-size: 14px;
+            font-family: 'Noto-Sans-KR';
         }
     }
 }
